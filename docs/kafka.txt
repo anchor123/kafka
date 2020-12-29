@@ -1,0 +1,6 @@
+bin/windows/zookeeper-server-start.bat config/zookeeper.properties
+bin/windows/kafka-server-start.bat config/server.properties
+bin/windows/kafka-server-start.bat config/server1.properties
+
+kafka-console-producer.bat --broker-list localhost:9092 --topic test --producer.config connect.properties
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --consumer.config connect.properties
