@@ -2,5 +2,12 @@ bin/windows/zookeeper-server-start.bat config/zookeeper.properties
 bin/windows/kafka-server-start.bat config/server.properties
 bin/windows/kafka-server-start.bat config/server1.properties
 
-kafka-console-producer.bat --broker-list localhost:9092 --topic test --producer.config connect.properties
-kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --consumer.config connect.properties
+kafka-console-producer.bat --topic test --producer.config config/producer.properties
+
+kafka-console-producer.bat --topic test --producer.config config/producer-sit.properties
+
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --consumer.config config/consumer.properties
+
+kafka-console-consumer.bat --bootstrap-server kafka-aiahk-sit.aiaazure.biz:9092 --topic dev.hk.com.aia.connectivity.test --consumer.config config/consumer-sit.properties
+
+
